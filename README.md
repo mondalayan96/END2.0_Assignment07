@@ -20,6 +20,33 @@
 
 [https://colab.research.google.com/drive/1eFp82mATAGGaq5Rza8jdZj7sqxHpdj4E#scrollTo=Yb9yKw7F86R-&line=3&uniqifier=1]
 
+def create_label(label):
+    if label <= 0.2: return 0
+    if label <= 0.4: return 1
+    if label <= 0.6: return 2
+    if label <= 0.8: return 3
+    return 4
+
+## Sentiment label data
+sentiment_labels = pd.read_csv("sentiment_labels.txt", names=['phrase_ids', 'labels'], sep="|", header=0)
+sentiment_labels['labels'] = sentiment_labels['labels'].apply(create_label)
+## sentence index and sentence
+sentence_ids = pd.read_csv("datasetSentences.txt", sep="\t")
+## phrases and phrase_ids
+dic = pd.read_csv("dictionary.txt", sep="|", names=['phrase', 'phrase_ids'])
+## Train Test split
+train_test_valid_split = pd.read_csv("datasetSplit.txt")
+## Merging data to create final data
+sentence_phrase_merge = pd.merge(sentence_ids, dic, left_on='sentence', right_on='phrase')
+sentence_phrase_split = pd.merge(sentence_phrase_merge, train_test_valid_split, on='sentence_index')
+dataset = pd.merge(sentence_phrase_split, sentiment_labels, on='phrase_ids')
+print("Length of data : ",dataset.shape[0])
+## Subset data for Model
+df = dataset[['labels','sentence']]
+print('train data shape: ', df.shape)
+df.head()
+
+
 
 ## Assignment details on quiz section:
 Upload to github and proceed to answer these questions asked in the S7 - Assignment Solutions, where these questions are asked:
