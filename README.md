@@ -72,7 +72,6 @@ def cleanup_text(texts):
         text = re.sub('[^A-Za-z0-9]+', ' ', text) # remove # and numbers
         cleaned_text.append(text)
     return cleaned_text
-    
   
  ## training log text  
  
