@@ -20,7 +20,7 @@
 
 [https://colab.research.google.com/drive/1eFp82mATAGGaq5Rza8jdZj7sqxHpdj4E#scrollTo=Yb9yKw7F86R-&line=3&uniqifier=1]
 
-[Assets/part1_dataset_examples.PNG]
+[https://raw.githubusercontent.com/Aditya701/END2.0_Assignment07/main/Assets/part1_dataset_examples.PNG?token=AD35QWZYL5KDQOBLQ747JQTA2SYBO]
 
 def create_label(label):
     if label <= 0.2: return 0
