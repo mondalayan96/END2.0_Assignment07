@@ -55,6 +55,7 @@ print('train data shape: ', df.shape)
 df.head()
 
 ## Code for Dataset preparation
+
 def cleanup_text(texts):
     cleaned_text = []
     for text in texts:
