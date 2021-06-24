@@ -20,7 +20,7 @@
 
 [https://colab.research.google.com/drive/1eFp82mATAGGaq5Rza8jdZj7sqxHpdj4E#scrollTo=Yb9yKw7F86R-&line=3&uniqifier=1]
 
-'''sh
+
 def create_label(label):
     if label <= 0.2: return 0
     if label <= 0.4: return 1
@@ -47,7 +47,7 @@ df = dataset[['labels','sentence']]
 print('train data shape: ', df.shape)
 df.head()
 
-'''
+
 
 ## Assignment details on quiz section:
 Upload to github and proceed to answer these questions asked in the S7 - Assignment Solutions, where these questions are asked:
