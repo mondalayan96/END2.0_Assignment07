@@ -1,6 +1,6 @@
 # END2.0_Assignment07
 
-
+Assignment 07 is consisting of two parts.Assignment results have been experimented on various datasets using different model architechtures. Please find the log, attached output, examples of classified results etc in details. 
 
 # Part 1
 
@@ -295,7 +295,6 @@ Share the prediction on 10 samples picked from the test dataset. (100 pts)
 - Dataset has been splitted into 70/30 Train and Test (no validation set has been used)
 - Model architecture 
 - training log text 
-- prediction on 10 samples picked from the test dataset
 
 ## Examples 
 
@@ -386,6 +385,56 @@ Share the prediction on 10 samples picked from the test dataset. (100 pts)
 ## Output
 
 ![image](https://user-images.githubusercontent.com/16242779/123306733-490a4d80-d53f-11eb-8def-1a0821db340b.png)
+
+# Additional Dataset- WikiQA
+WikiQA corpus is a new publicly available set of question and sentence pairs, collected and annotated for research on open-domain question answering
+
+## Hyperparameters
+
+	INPUT_DIM = len(SRC.vocab)
+	OUTPUT_DIM = len(TRG.vocab)
+	ENC_EMB_DIM = 256
+	DEC_EMB_DIM = 256
+	HID_DIM = 512
+	N_LAYERS = 2
+	ENC_DROPOUT = 0.5
+	DEC_DROPOUT = 0.5
+## Training logs
+
+	Epoch: 01 | Time: 0m 9s
+		Train Loss: 5.908 | Train PPL: 367.966
+		 Val. Loss: 4.741 |  Val. PPL: 114.566
+	Epoch: 02 | Time: 0m 9s
+		Train Loss: 5.387 | Train PPL: 218.446
+		 Val. Loss: 4.661 |  Val. PPL: 105.692
+	Epoch: 03 | Time: 0m 9s
+		Train Loss: 5.327 | Train PPL: 205.826
+		 Val. Loss: 4.655 |  Val. PPL: 105.093
+	Epoch: 04 | Time: 0m 9s
+		Train Loss: 5.287 | Train PPL: 197.732
+		 Val. Loss: 4.674 |  Val. PPL: 107.124
+	Epoch: 05 | Time: 0m 9s
+		Train Loss: 5.241 | Train PPL: 188.800
+		 Val. Loss: 4.670 |  Val. PPL: 106.712
+	Epoch: 06 | Time: 0m 9s
+		Train Loss: 5.188 | Train PPL: 179.190
+		 Val. Loss: 4.695 |  Val. PPL: 109.388
+	Epoch: 07 | Time: 0m 9s
+		Train Loss: 5.146 | Train PPL: 171.815
+		 Val. Loss: 4.684 |  Val. PPL: 108.156
+	Epoch: 08 | Time: 0m 9s
+		Train Loss: 5.102 | Train PPL: 164.325
+		 Val. Loss: 4.737 |  Val. PPL: 114.073
+	Epoch: 09 | Time: 0m 9s
+		Train Loss: 5.054 | Train PPL: 156.721
+		 Val. Loss: 4.712 |  Val. PPL: 111.309
+	Epoch: 10 | Time: 0m 9s
+		Train Loss: 5.009 | Train PPL: 149.750
+		 Val. Loss: 4.719 |  Val. PPL: 112.050
+		 
+## Training & Validation loss		
+
+	![image](https://user-images.githubusercontent.com/16242779/123310175-6d682900-d543-11eb-9776-ce2157cc8e41.png)
 
 
 ## Assignment details on quiz section:
