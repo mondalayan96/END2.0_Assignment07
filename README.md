@@ -161,7 +161,7 @@
 	![image](https://user-images.githubusercontent.com/16242779/123307412-1745b680-d540-11eb-9e63-ab66b3f48fc1.png)
 
 - -Confusion matrix-test data, predicted results
-		![image](https://user-images.githubusercontent.com/16242779/123307642-5e33ac00-d540-11eb-9dde-3f087d32ab52.png)
+	![image](https://user-images.githubusercontent.com/16242779/123307642-5e33ac00-d540-11eb-9dde-3f087d32ab52.png)
 
 
 
