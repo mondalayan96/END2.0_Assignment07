@@ -20,8 +20,13 @@
 
 ![Examples](Assets/part1_dataset_examples.PNG)
 
+## Splitting
 
-90
+train_data,test_data = train_test_split(df,test_size=0.3)
+train_data.reset_index(inplace=True)
+test_data.reset_index(inplace=True)
+
+## Floating-point labels have been converted into 5 classes (0-0.2, 0.2-0.4, 0.4-0.6, 0.6-0.8, 0.8-1.0) 
 
 def create_label(label):
     if label <= 0.2: return 0
@@ -49,6 +54,57 @@ df = dataset[['labels','sentence']]
 print('train data shape: ', df.shape)
 df.head()
 
+## Code for Dataset preparation
+def cleanup_text(texts):
+    cleaned_text = []
+    for text in texts:
+        # remove punctuation
+        text = re.sub('[^a-zA-Z0-9]', ' ', text)
+        # remove multiple spaces
+        text = re.sub(r' +', ' ', text)
+        # remove newline
+        text = re.sub(r'\n', ' ', text)
+        text = str(text).lower()
+        text = re.sub('((www\.[^\s]+)|(https?://[^\s]+))', 'URL', text) # remove URLs
+        text = re.sub('@[^\s]+', 'ATUSER', text) # remove usernames
+        text = re.sub(r'#([^\s]+)', r'\1', text) # remove the # in #hashtag
+        text = re.sub('[^A-Za-z0-9]+', ' ', text) # remove # and numbers
+        cleaned_text.append(text)
+    return cleaned_text
+    
+  
+ ## training log text  
+ 
+ Train Loss: 1.577 | Train Acc: 27.86%
+	 Val. Loss: 1.564 |  Val. Acc: 30.89% 
+
+	Train Loss: 1.539 | Train Acc: 34.75%
+	 Val. Loss: 1.555 |  Val. Acc: 32.17% 
+
+	Train Loss: 1.497 | Train Acc: 39.25%
+	 Val. Loss: 1.552 |  Val. Acc: 31.70% 
+
+	Train Loss: 1.456 | Train Acc: 43.77%
+	 Val. Loss: 1.560 |  Val. Acc: 31.10% 
+
+	Train Loss: 1.412 | Train Acc: 48.70%
+	 Val. Loss: 1.559 |  Val. Acc: 32.38% 
+
+	Train Loss: 1.373 | Train Acc: 52.67%
+	 Val. Loss: 1.561 |  Val. Acc: 32.41% 
+
+	Train Loss: 1.330 | Train Acc: 57.11%
+	 Val. Loss: 1.571 |  Val. Acc: 31.87% 
+
+	Train Loss: 1.297 | Train Acc: 60.59%
+	 Val. Loss: 1.567 |  Val. Acc: 32.56% 
+
+	Train Loss: 1.271 | Train Acc: 63.27%
+	 Val. Loss: 1.575 |  Val. Acc: 31.43% 
+
+	Train Loss: 1.253 | Train Acc: 65.10%
+	 Val. Loss: 1.587 |  Val. Acc: 30.30%
+  
 
 
 ## Assignment details on quiz section:
