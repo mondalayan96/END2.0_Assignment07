@@ -82,6 +82,18 @@
 		cleaned_text.append(text)
 	    return cleaned_text
 
+## Hypperparameters
+	lr = 1e-4
+	batch_size = 16
+	embedding_dim = 300
+	dropout_keep_prob = 0.5
+	seed = 42
+	output_dim = 5
+	hidden_dim1 = 512
+	hidden_dim2 = 256
+	n_layers = 2  # LSTM layers
+	bidirectional = False 
+
 ## Model Architecture
 
 	import torch.nn as nn
@@ -154,14 +166,20 @@
 - training loss vs validation Accuracy
 	![image](https://user-images.githubusercontent.com/16242779/123307000-98e91480-d53f-11eb-9d3b-9ca88f916c98.png)
 
+
 - training loss vs validation loss 
 	![image](https://user-images.githubusercontent.com/16242779/123307332-0006c900-d540-11eb-8b9f-3ed973a6da4d.png)
 
--Confusion matrix-train data, predicted results
-	![image](https://user-images.githubusercontent.com/16242779/123307412-1745b680-d540-11eb-9e63-ab66b3f48fc1.png)
 
-- -Confusion matrix-test data, predicted results
-	![image](https://user-images.githubusercontent.com/16242779/123307642-5e33ac00-d540-11eb-9dde-3f087d32ab52.png)
+
+
+- Confusion matrix-train data, predicted results
+	![image](https://user-images.githubusercontent.com/16242779/123309335-6ab90400-d542-11eb-89d7-027e9af0213e.png)
+
+
+- Confusion matrix-test data, predicted results
+	![image](https://user-images.githubusercontent.com/16242779/123309390-799fb680-d542-11eb-86f4-cea591098870.png)
+
 
 
 
@@ -300,6 +318,8 @@ Share the prediction on 10 samples picked from the test dataset. (100 pts)
 
 
 ## Model architecture
+
+ 
 
 	Seq2Seq(
 	  (encoder): Encoder(
